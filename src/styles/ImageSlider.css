@@ -17,38 +17,6 @@
   align-items: end;
 }
 
-.markers li:nth-child(1) {
-  --i: 1;
-}
-
-.markers li:nth-child(2) {
-  --i: 2;
-}
-
-.markers li:nth-child(3) {
-  --i: 3;
-}
-
-.markers li:nth-child(4) {
-  --i: 4;
-}
-
-.markers li:nth-child(5) {
-  --i: 5;
-}
-
-.markers li:nth-child(6) {
-  --i: 6;
-}
-
-.markers li:nth-child(7) {
-  --i: 7;
-}
-
-.markers li:nth-child(8) {
-  --i: 8;
-}
-
 .slider {
   scroll-timeline: --carousel x;
   scrollbar-width: none;
@@ -93,23 +61,12 @@
   border-radius: 50%;
   animation: activate linear;
   animation-timeline: --carousel;
-  /* animation-range: var(--range-start) var(--range-end);
-  transition: background 0.3s, opacity 0.3s; */
-  /* animation-range: var(--range-start) var(--range-end); */
-  /* animation-range: calc((var(--i) - 1) * 12.5%) calc(var(--i) * 12.5% + 1px); */
 }
 
 .markers a.active {
   background: #67fb15;
   opacity: 1;
 }
-/* @keyframes activate {
-  0%,
-  100% {
-    background: #67fb15;
-    opacity: 1;
-  }
-} */
 
 .slider a {
   flex: 0 0 100%;

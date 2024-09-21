@@ -1,32 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
 import { groupImages } from '../logic/groupImages'
+import { useSlider } from '../hooks/useSlider'
 import '../styles/ImageSlider.css'
 
 export default function ImageSlider({ images }) {
   const imageGroups = groupImages({ images })
-  const [activeIndex, setActiveIndex] = useState(0)
-  const sliderRef = useRef(null)
+  const { activeIndex, sliderRef } = useSlider()
 
-  const handleScroll = () => {
-    const slider = sliderRef.current
-    const scrollLeft = slider.scrollLeft
-    const width = slider.offsetWidth
-
-    const newIndex = Math.round(scrollLeft / width)
-    setActiveIndex(newIndex)
-  }
-
-  useEffect(() => {
-    const slider = sliderRef.current
-    if (slider) {
-      slider.addEventListener('scroll', handleScroll)
-    }
-    return () => {
-      if (slider) {
-        slider.removeEventListener('scroll', handleScroll)
-      }
-    }
-  }, [])
   console.log(imageGroups)
   return (
     <section className="images-movies">
