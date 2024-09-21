@@ -6,6 +6,14 @@ export default function ImageSlider({ images, name }) {
   const imageGroups = groupImages({ images })
   const { activeIndex, sliderRef } = useSlider()
 
+  function handleMarkerClick(e, i) {
+    e.preventDefault()
+    sliderRef.current.scrollTo({
+      left: sliderRef.current.clientWidth * i,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <section className="images-movies">
       <div className="title-markers">
@@ -16,6 +24,7 @@ export default function ImageSlider({ images, name }) {
               <li key={i}>
                 <a
                   href={`#img_${i + 1}`}
+                  onClick={(e) => handleMarkerClick(e, i)}
                   style={{
                     '--i': i + 1,
                     '--range-start': `${i * (100 / imageGroups.length)}%`,
