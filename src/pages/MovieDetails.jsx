@@ -5,17 +5,19 @@ import { useMovieDetails } from '../hooks/useMovieDetails'
 
 import '../styles/movieDetails.css'
 import ImageSlider from '../components/ImageSlider'
+import CastMedia from '../components/CastMedia'
 
 export default function MovieDetails() {
   const { id } = useParams()
   const { movie, images, cast, director } = useMovieDetails({ id })
-  // console.log(cast)
+  console.log(cast)
 
   return (
     <Layout>
       <main>
         <Details movie={movie} director={director} />
-        <ImageSlider images={images} />
+        <CastMedia cast={cast} />
+        <ImageSlider images={images} name={movie.name || movie.title} />
       </main>
     </Layout>
   )

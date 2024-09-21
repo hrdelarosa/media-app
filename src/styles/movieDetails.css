@@ -2,11 +2,11 @@ main {
   margin-inline: 80px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .movie-details {
-  height: calc(100vh - 70px);
+  margin: 38px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

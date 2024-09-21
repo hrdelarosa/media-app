@@ -1,0 +1,60 @@
+.cast {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.content-cast {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 22px;
+}
+
+.profile-cast {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile {
+  width: 100%;
+  height: 230px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.no-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #262626;
+
+  & span {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.profile-names {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  & span {
+    font-size: 17px;
+    font-weight: 700;
+  }
+}
