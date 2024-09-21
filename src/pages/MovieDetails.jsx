@@ -10,7 +10,6 @@ import CastMedia from '../components/CastMedia'
 export default function MovieDetails() {
   const { id } = useParams()
   const { movie, images, cast, director } = useMovieDetails({ id })
-  console.log(cast)
 
   return (
     <Layout>

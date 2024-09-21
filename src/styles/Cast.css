@@ -28,6 +28,7 @@
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
+  aspect-ratio: 0.652;
 }
 
 .no-image {
