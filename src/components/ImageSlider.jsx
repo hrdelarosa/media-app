@@ -2,15 +2,14 @@ import { groupImages } from '../logic/groupImages'
 import { useSlider } from '../hooks/useSlider'
 import '../styles/ImageSlider.css'
 
-export default function ImageSlider({ images }) {
+export default function ImageSlider({ images, name }) {
   const imageGroups = groupImages({ images })
   const { activeIndex, sliderRef } = useSlider()
 
-  console.log(imageGroups)
   return (
     <section className="images-movies">
       <div className="title-markers">
-        <span>Images</span>
+        <h2>Images</h2>
         <div className="content-markers">
           <ul className="markers">
             {imageGroups.map((_, i) => (
@@ -37,7 +36,7 @@ export default function ImageSlider({ images }) {
                 <img
                   className="img-movie"
                   src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
-                  alt={i}
+                  alt={`${name} image number ${i}`}
                 />
               </div>
             ))}
