@@ -1,0 +1,70 @@
+import { useEffect, useRef, useState } from 'react'
+import { groupImages } from '../logic/groupImages'
+import '../styles/ImageSlider.css'
+
+export default function ImageSlider({ images }) {
+  const imageGroups = groupImages({ images })
+  const [activeIndex, setActiveIndex] = useState(0)
+  const sliderRef = useRef(null)
+
+  const handleScroll = () => {
+    const slider = sliderRef.current
+    const scrollLeft = slider.scrollLeft
+    const width = slider.offsetWidth
+
+    const newIndex = Math.round(scrollLeft / width)
+    setActiveIndex(newIndex)
+  }
+
+  useEffect(() => {
+    const slider = sliderRef.current
+    if (slider) {
+      slider.addEventListener('scroll', handleScroll)
+    }
+    return () => {
+      if (slider) {
+        slider.removeEventListener('scroll', handleScroll)
+      }
+    }
+  }, [])
+  console.log(imageGroups)
+  return (
+    <section className="images-movies">
+      <div className="title-markers">
+        <span>Images</span>
+        <div className="content-markers">
+          <ul className="markers">
+            {imageGroups.map((_, i) => (
+              <li key={i}>
+                <a
+                  href={`#img_${i + 1}`}
+                  style={{
+                    '--i': i + 1,
+                    '--range-start': `${i * (100 / imageGroups.length)}%`,
+                    '--range-end': `${(i + 1) * (100 / imageGroups.length)}%`,
+                  }}
+                  className={activeIndex === i ? 'active' : ''}
+                ></a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="slider" ref={sliderRef}>
+        {imageGroups.map((group, i) => (
+          <a key={i} name={`img_${i + 1}`} className="content-movies">
+            {group.map((image, i) => (
+              <div key={i} className="content-ima">
+                <img
+                  className="img-movie"
+                  src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
+                  alt={i}
+                />
+              </div>
+            ))}
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}

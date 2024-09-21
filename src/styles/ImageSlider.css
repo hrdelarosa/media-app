@@ -1,0 +1,131 @@
+.images-movies {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  timeline-scope: --carousel;
+  margin-bottom: 20px;
+
+  & span {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.title-markers {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.markers li:nth-child(1) {
+  --i: 1;
+}
+
+.markers li:nth-child(2) {
+  --i: 2;
+}
+
+.markers li:nth-child(3) {
+  --i: 3;
+}
+
+.markers li:nth-child(4) {
+  --i: 4;
+}
+
+.markers li:nth-child(5) {
+  --i: 5;
+}
+
+.markers li:nth-child(6) {
+  --i: 6;
+}
+
+.markers li:nth-child(7) {
+  --i: 7;
+}
+
+.markers li:nth-child(8) {
+  --i: 8;
+}
+
+.slider {
+  scroll-timeline: --carousel x;
+  scrollbar-width: none;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 5.29 / 1;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  justify-content: space-between;
+  border-radius: 16px;
+
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.content-movies {
+  display: flex;
+  gap: 13px;
+
+  & .content-ima {
+    width: 450px;
+  }
+}
+
+.img-movie {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.markers a {
+  display: block;
+  width: 10px;
+  aspect-ratio: 1;
+  background: #ffffff;
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: activate linear;
+  animation-timeline: --carousel;
+  /* animation-range: var(--range-start) var(--range-end);
+  transition: background 0.3s, opacity 0.3s; */
+  /* animation-range: var(--range-start) var(--range-end); */
+  /* animation-range: calc((var(--i) - 1) * 12.5%) calc(var(--i) * 12.5% + 1px); */
+}
+
+.markers a.active {
+  background: #67fb15;
+  opacity: 1;
+}
+/* @keyframes activate {
+  0%,
+  100% {
+    background: #67fb15;
+    opacity: 1;
+  }
+} */
+
+.slider a {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: center;
+}
+
+.content-markers {
+  display: flex;
+  justify-content: end;
+}
+
+.markers {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  list-style: none;
+  font-size: 2em;
+}

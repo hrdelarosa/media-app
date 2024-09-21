@@ -1,0 +1,79 @@
+.hero {
+  height: calc(100vh - 65px);
+  width: 100%;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.information-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 50%;
+  position: absolute;
+  left: 80px;
+  bottom: 15%;
+
+  & h3 {
+    font-size: 46px;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  & p {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+.media-type {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  & span {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+  }
+}
+
+.content-btn {
+  position: absolute;
+  right: 80px;
+  bottom: 18%;
+}
+
+.btn-more {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(23, 23, 23, 0.7);
+  backdrop-filter: blur(3px);
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgb(10, 10, 10, 0.8);
+  }
+
+  & span {
+    font-size: 16px;
+  }
+}
