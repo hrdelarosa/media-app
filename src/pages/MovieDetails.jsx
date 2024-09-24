@@ -28,6 +28,8 @@ export default function MovieDetails() {
 
         <CastMedia cast={cast} />
 
+        <ImageSlider images={images} name={movie.name || movie.title} />
+
         {/* <div className="reviews">
           <h2>Reviews</h2>
           <div className="content-reviews">
@@ -72,8 +74,6 @@ export default function MovieDetails() {
             <p>{reviews[0].content}</p>
           </div>
         </div> */}
-
-        <ImageSlider images={images} name={movie.name || movie.title} />
       </main>
     </Layout>
   )

@@ -1,8 +1,34 @@
+.slider {
+  --sb-track-color: #262626;
+  --sb-thumb-color: #bfff92;
+  --sb-size: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  height: var(--sb-size);
+}
+
+.slider::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  border: 2px solid #232e33;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .slider {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
 .images-movies {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 30px;
+  margin: 30px 0;
   timeline-scope: --carousel;
 }
 
@@ -14,7 +40,6 @@
 
 .slider {
   scroll-timeline: --carousel x;
-  scrollbar-width: none;
   width: 100%;
   height: 100%;
   aspect-ratio: 5.29 / 1;
@@ -34,6 +59,7 @@
 .content-movies {
   display: flex;
   gap: 13px;
+  margin-bottom: 8px;
 
   & .content-ima {
     width: 450px;

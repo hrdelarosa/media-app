@@ -1,43 +1,13 @@
 import { groupImages } from '../logic/groupImages'
-import { useSlider } from '../hooks/useSlider'
 import '../styles/ImageSlider.css'
 
 export default function ImageSlider({ images, name }) {
   const imageGroups = groupImages({ images })
-  const { activeIndex, sliderRef } = useSlider()
-
-  function handleMarkerClick(e, i) {
-    e.preventDefault()
-    sliderRef.current.scrollTo({
-      left: sliderRef.current.clientWidth * i,
-      behavior: 'smooth',
-    })
-  }
 
   return (
     <section className="images-movies">
-      <div className="title-markers">
-        <h2>Images</h2>
-        <div className="content-markers">
-          <ul className="markers">
-            {imageGroups.map((_, i) => (
-              <li key={i}>
-                <a
-                  href={`#img_${i + 1}`}
-                  onClick={(e) => handleMarkerClick(e, i)}
-                  style={{
-                    '--i': i + 1,
-                    '--range-start': `${i * (100 / imageGroups.length)}%`,
-                    '--range-end': `${(i + 1) * (100 / imageGroups.length)}%`,
-                  }}
-                  className={activeIndex === i ? 'active' : ''}
-                ></a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="slider" ref={sliderRef}>
+      <h2>Images</h2>
+      <div className="slider">
         {imageGroups.map((group, i) => (
           <a key={i} name={`img_${i + 1}`} className="content-movies">
             {group.map((image, i) => (
