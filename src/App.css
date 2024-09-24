@@ -2,3 +2,9 @@ h2 {
   font-size: 32px;
   font-weight: 700;
 }
+
+.no-trailer {
+  max-width: 1029px;
+  max-height: 579px;
+  border-radius: 10px;
+}

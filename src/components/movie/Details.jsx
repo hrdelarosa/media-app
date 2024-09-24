@@ -17,7 +17,7 @@ export default function Details({ movie, director }) {
         <div className="poster-movie">
           <img
             src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-            alt=""
+            alt={`Movie poster for ${movie.name || movie.title}`}
           />
         </div>
 
