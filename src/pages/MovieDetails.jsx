@@ -7,14 +7,16 @@ import { useParams } from 'react-router-dom'
 import { useMovieDetails } from '../hooks/useMovieDetails'
 
 import '../styles/movieDetails.css'
+import Recommendations from '../components/Recommendations'
 
 export default function MovieDetails() {
   const { id } = useParams()
-  const { movie, images, cast, director, trailer, keywords } = useMovieDetails({
-    id,
-  })
+  const { movie, images, cast, director, trailer, keywords, recommen } =
+    useMovieDetails({
+      id,
+    })
 
-  console.log(trailer)
+  console.log(recommen)
   return (
     <Layout>
       <main>
@@ -29,6 +31,8 @@ export default function MovieDetails() {
         <CastMedia cast={cast} />
 
         <ImageSlider images={images} name={movie.name || movie.title} />
+
+        <Recommendations recommen={recommen} />
       </main>
     </Layout>
   )
