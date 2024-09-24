@@ -1,14 +1,48 @@
+.content-cast {
+  --sb-track-color: #262626;
+  --sb-thumb-color: #bfff92;
+  --sb-size: 10px;
+}
+
+.content-cast::-webkit-scrollbar {
+  height: var(--sb-size);
+}
+
+.content-cast::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.content-cast::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  border: 2px solid #232e33;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .content-cast {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
 .cast {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  width: 100%;
 }
 
 .content-cast {
-  display: grid;
+  /* display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 22px;
+  gap: 22px; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+  overflow-y: hidden;
 }
 
 .profile-cast {
@@ -16,10 +50,11 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-bottom: 8px;
 }
 
 .profile {
-  width: 100%;
+  width: 150px;
   height: 230px;
 }
 
