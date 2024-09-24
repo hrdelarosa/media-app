@@ -5,9 +5,9 @@ import CastMedia from '../components/CastMedia'
 import TrailerInformation from '../components/TrailerInformation'
 import { useParams } from 'react-router-dom'
 import { useMovieDetails } from '../hooks/useMovieDetails'
+import Recommendations from '../components/Recommendations'
 
 import '../styles/movieDetails.css'
-import Recommendations from '../components/Recommendations'
 
 export default function MovieDetails() {
   const { id } = useParams()

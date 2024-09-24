@@ -1,0 +1,31 @@
+footer {
+  width: 100%;
+  padding-inline: 80px;
+  margin-top: 50px;
+  padding-block: 40px;
+
+  & hr {
+    margin-bottom: 30px;
+    background-color: #333333;
+    height: 1px;
+    width: 100%;
+    border: 0;
+  }
+
+  & nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+
+  & a:hover {
+    transition: color 0.3s ease-in-out;
+    color: #bfff92;
+  }
+}
