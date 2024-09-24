@@ -51,10 +51,6 @@ export default function Details({ movie, director }) {
           </div>
 
           <div className="content-director-date">
-            {/* <div className="details-items">
-              <span className="title-details">Release Date</span>
-              <p className="text-details">{movie.release_date}</p>
-            </div> */}
             <DetailsItems title="Release Date">
               <p className="text-details">{movie.release_date}</p>
             </DetailsItems>
