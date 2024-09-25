@@ -1,4 +1,4 @@
-import ContentMedia from './ContentMedia'
+import ContentMedia from './media/ContentMedia'
 import '../styles/Recommendations.css'
 
 export default function Recommendations({ recommen }) {

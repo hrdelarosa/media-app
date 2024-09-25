@@ -39,15 +39,21 @@
   display: flex;
   flex-direction: row;
   gap: 13px;
+  padding-top: 4px;
   overflow-y: hidden;
 }
 
 .profile-cast {
   width: 150px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 8px;
+  transition: transform 0.3s ease-in;
+}
+.profile-cast:hover {
+  transform: translateY(-3px);
 }
 
 .profile {

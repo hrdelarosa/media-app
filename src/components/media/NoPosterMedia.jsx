@@ -1,4 +1,4 @@
-import NoImage from '../icons/NoImage'
+import NoImage from '../../icons/NoImage'
 
 export default function NoPosterMedia({ recomm }) {
   return (

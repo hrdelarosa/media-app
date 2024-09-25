@@ -1,4 +1,4 @@
-import Profile from '../icons/Profile'
+import Profile from '../../icons/Profile'
 
 export default function ProfileNoImage() {
   return (

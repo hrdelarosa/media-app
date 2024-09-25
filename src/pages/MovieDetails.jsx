@@ -1,7 +1,7 @@
 import Layout from '../layouts/Layout'
 import Details from '../components/movie/Details'
 import ImageSlider from '../components/ImageSlider'
-import CastMedia from '../components/CastMedia'
+import CastMedia from '../components/cast/CastMedia'
 import TrailerInformation from '../components/TrailerInformation'
 import { useParams } from 'react-router-dom'
 import { useMovieDetails } from '../hooks/useMovieDetails'
@@ -16,7 +16,7 @@ export default function MovieDetails() {
       id,
     })
 
-  console.log(recommen)
+  // console.log(recommen)
   return (
     <Layout>
       <main>
