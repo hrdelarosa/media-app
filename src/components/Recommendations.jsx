@@ -6,7 +6,7 @@ export default function Recommendations({ recommen }) {
     <div className="recommen">
       <h2>Recommendations</h2>
 
-      <ContentMedia recommen={recommen} />
+      <ContentMedia media={recommen} />
     </div>
   )
 }

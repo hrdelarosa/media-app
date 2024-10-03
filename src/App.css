@@ -1,10 +1,38 @@
+main {
+  margin-inline: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 h2 {
   font-size: 32px;
   font-weight: 700;
+}
+
+.content-medias-display {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
 }
 
 .no-trailer {
   max-width: 1029px;
   max-height: 579px;
   border-radius: 10px;
+}
+
+.media-people {
+  font-size: 16px;
+  font-weight: 500;
+  color: #121212;
+  background-color: #dfffc5;
+  padding: 8px 22px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.media-people:hover {
+  background-color: #bfff92;
 }
