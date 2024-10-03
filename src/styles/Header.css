@@ -49,6 +49,10 @@
   align-items: center;
   gap: 16px;
 
+  & li {
+    transition: transform 0.2s ease-in-out;
+  }
+
   & .pageLink {
     font-weight: 500;
     color: white;
@@ -66,4 +70,8 @@
     text-decoration: underline;
     pointer-events: none;
   }
+}
+
+.navLink li:hover {
+  transform: translateY(-1.5px);
 }
