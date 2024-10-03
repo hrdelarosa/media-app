@@ -8,32 +8,45 @@ import { useMovieDetails } from '../hooks/useMovieDetails'
 import Recommendations from '../components/Recommendations'
 
 import '../styles/movieDetails.css'
+import Loader from '../components/Loader'
 
 export default function MovieDetails() {
   const { id } = useParams()
-  const { movie, images, cast, director, trailer, keywords, recommen } =
-    useMovieDetails({
-      id,
-    })
+  const {
+    loading,
+    movie,
+    images,
+    cast,
+    director,
+    trailer,
+    keywords,
+    recommen,
+  } = useMovieDetails({
+    id,
+  })
 
   // console.log(recommen)
   return (
     <Layout>
-      <main>
-        <Details movie={movie} director={director} />
+      {loading ? (
+        <Loader />
+      ) : (
+        <main>
+          <Details movie={movie} director={director} />
 
-        <TrailerInformation
-          trailer={trailer}
-          movie={movie}
-          keywords={keywords}
-        />
+          <TrailerInformation
+            trailer={trailer}
+            movie={movie}
+            keywords={keywords}
+          />
 
-        <CastMedia cast={cast} />
+          <CastMedia cast={cast} />
 
-        <ImageSlider images={images} name={movie.name || movie.title} />
+          <ImageSlider images={images} name={movie.name || movie.title} />
 
-        <Recommendations recommen={recommen} />
-      </main>
+          <Recommendations recommen={recommen} />
+        </main>
+      )}
     </Layout>
   )
 }
