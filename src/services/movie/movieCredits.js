@@ -1,4 +1,4 @@
-import { options } from "../utils/optionsFetch"
+import { options } from "../../utils/optionsFetch"
 
 export async function movieCredits({ id }) {
     const URL_CREDITS_MOVIE = `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`

@@ -1,8 +1,8 @@
-export default function NoImage() {
+export default function NoImage({ size = '130' }) {
   return (
     <svg
-      width="130"
-      height="130"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

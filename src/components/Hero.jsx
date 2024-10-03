@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useRandomTrending } from '../hooks/useRandomTrending'
 import MediaType from '../icons/MediaType'
 import '../styles/Hero.css'
+import { replaceSpace } from '../utils/replaceSpace'
 
 export default function Hero() {
   const { media } = useRandomTrending()
@@ -26,7 +27,12 @@ export default function Hero() {
       </div>
 
       <div className="content-btn">
-        <Link to={`/movies/${media.id}`} className="btn-more">
+        <Link
+          to={`/movie/${media.id}-${
+            replaceSpace(media.name) || replaceSpace(media.title)
+          }`}
+          className="btn-more"
+        >
           <svg
             width="28"
             height="28"

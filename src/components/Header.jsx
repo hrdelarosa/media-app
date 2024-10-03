@@ -23,7 +23,7 @@ export default function Header() {
           </li>
           <li>
             <NavLink
-              to="/movie"
+              to="/movies"
               className={({ isActive }) => (isActive ? 'isActive' : 'pageLink')}
             >
               Movies
@@ -39,10 +39,10 @@ export default function Header() {
           </li>
           <li>
             <NavLink
-              to="/people"
+              to="/peoples"
               className={({ isActive }) => (isActive ? 'isActive' : 'pageLink')}
             >
-              People
+              Peoples
             </NavLink>
           </li>
         </ul>

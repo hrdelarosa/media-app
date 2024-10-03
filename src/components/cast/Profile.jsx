@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom'
 import ProfileNoImage from './ProfileNoImage'
+import { replaceSpace } from '../../utils/replaceSpace'
 
 export default function Profile({ person }) {
-  console.log(person)
   return (
-    <Link to={`/people/${person.id}`} className="profile-cast">
+    <Link
+      to={`/people/${person.id}-${replaceSpace(person.name)}`}
+      className="profile-cast"
+    >
       <div className="profile">
         {person.profile_path ? (
           <img

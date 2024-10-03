@@ -1,10 +1,9 @@
-const Instagram = (props) => (
+const Instagram = ({ size = '30' }) => (
   <svg
-    width="30"
-    height="30"
+    width={size}
+    height={size}
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 256"
-    {...props}
   >
     <path
       fill="currentColor"

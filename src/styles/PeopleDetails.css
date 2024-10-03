@@ -1,0 +1,175 @@
+.people-details section {
+  display: grid;
+  grid-template-areas:
+    'image-social profile-media profile-media'
+    'social-media about about';
+  grid-template-columns: 320px 1fr 250px;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+
+  & h1 {
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  & h2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  & p {
+    font-size: 15px;
+  }
+
+  & span {
+    font-size: 18px;
+  }
+}
+
+.content-image-profile {
+  grid-area: image-social;
+  width: 320px;
+  height: auto;
+
+  & .image-profile {
+    width: 100%;
+    height: 508px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.profile-media {
+  grid-area: profile-media;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .media-people {
+    font-size: 16px;
+    font-weight: 500;
+    color: #121212;
+    background-color: #dfffc5;
+    padding: 8px 22px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
+
+.media-people:hover {
+  background-color: #bfff92;
+}
+
+.known-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.known {
+  display: flex;
+  gap: 12px;
+  overflow-y: hidden;
+  padding-inline: 4px;
+
+  --sb-track-color: #121212;
+  --sb-thumb-color: #bfff92;
+  --sb-size: 10px;
+}
+
+.conten-image-known {
+  width: 130px;
+  height: 196px;
+  margin-bottom: 6px;
+}
+
+.image-known {
+  width: 130px;
+  height: 196px;
+  border-radius: 10px;
+}
+
+.known::-webkit-scrollbar {
+  height: var(--sb-size);
+}
+
+.known::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.known::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  border: 2px solid #232e33;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .known {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.biography {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-social-media {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: rotate 0.3s ease-in-out;
+}
+.profile-social-media a:hover {
+  color: #dfffc5;
+}
+
+.about-profile {
+  grid-area: about;
+  display: flex;
+  gap: 36px;
+}
+
+.content-no-poster-people {
+  background-color: #262626;
+  border-radius: 10px;
+}
+
+.no-poster-people {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 130px;
+  height: 196px;
+  padding: 8px;
+
+  & h3 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.no-people {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  & .no-poster {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

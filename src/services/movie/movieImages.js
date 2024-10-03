@@ -1,4 +1,4 @@
-import { options } from "../utils/optionsFetch"
+import { options } from "../../utils/optionsFetch"
 
 export async function movieImages({ id }) {
     const URL_IMAGES_MOVIE = `https://api.themoviedb.org/3/movie/${id}/images`

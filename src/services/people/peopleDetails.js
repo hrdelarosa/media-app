@@ -1,7 +1,7 @@
-import { options } from "../utils/optionsFetch"
+import { options } from "../../utils/optionsFetch"
 
-export async function movieDetails({ id }) {
-    const URL_TRENDING_MEDIA = `https://api.themoviedb.org/3/movie/${id}?language=en-US`
+export async function peopleDetails({ id }) {
+    const URL_TRENDING_MEDIA = `https://api.themoviedb.org/3/person/${id}?language=en-US`
 
     try {
         const res = await fetch(URL_TRENDING_MEDIA, options)
