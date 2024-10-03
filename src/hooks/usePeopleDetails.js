@@ -4,6 +4,7 @@ import { socialMediaPeople } from '../services/people/socialMediaPeople'
 import { mediaCombined } from '../services/people/mediaCombined'
 
 export function usePeopleDetails({ id }) {
+  const [loading, setLoading] = useState(true)
   const [people, setPeople] = useState({})
   const [socialMedia, setSocialMedia] = useState({})
   const [medias, setMedias] = useState({})
@@ -11,7 +12,10 @@ export function usePeopleDetails({ id }) {
 
   useEffect(() => {
     peopleDetails({ id })
-      .then((people) => setPeople(people))
+      .then((people) => {
+        setPeople(people)
+        setLoading(false)
+      })
       .catch((e) => setError(e))
 
     socialMediaPeople({ id }).then((social) => setSocialMedia(social))
@@ -19,5 +23,5 @@ export function usePeopleDetails({ id }) {
     mediaCombined({id}).then((media) => setMedias(media))
   }, [id])
 
-  return { people, socialMedia, medias, error }
+  return { loading, people, socialMedia, medias, error }
 }

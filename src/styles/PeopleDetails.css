@@ -140,6 +140,12 @@
   gap: 36px;
 }
 
+@media (min-height: 100vh) {
+  .people-details section {
+    margin-bottom: 30px;
+  }
+}
+
 .content-no-poster-people {
   background-color: #262626;
   border-radius: 10px;

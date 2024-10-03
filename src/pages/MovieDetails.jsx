@@ -3,12 +3,13 @@ import Details from '../components/movie/Details'
 import ImageSlider from '../components/ImageSlider'
 import CastMedia from '../components/cast/CastMedia'
 import TrailerInformation from '../components/TrailerInformation'
+import Recommendations from '../components/Recommendations'
+import Loader from '../components/Loader'
 import { useParams } from 'react-router-dom'
 import { useMovieDetails } from '../hooks/useMovieDetails'
-import Recommendations from '../components/Recommendations'
+import { useOpacity } from '../hooks/useOpacity'
 
 import '../styles/movieDetails.css'
-import Loader from '../components/Loader'
 
 export default function MovieDetails() {
   const { id } = useParams()
@@ -24,14 +25,19 @@ export default function MovieDetails() {
   } = useMovieDetails({
     id,
   })
+  const { opacity } = useOpacity(loading)
 
-  // console.log(recommen)
   return (
     <Layout>
       {loading ? (
         <Loader />
       ) : (
-        <main>
+        <main
+          style={{
+            opacity: opacity,
+            transition: 'opacity 1s ease-in-out',
+          }}
+        >
           <Details movie={movie} director={director} />
 
           <TrailerInformation
