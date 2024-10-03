@@ -11,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Trending />} />
       <Route path="/movie/:id" element={<MovieDetails />} />
+      <Route path="/movie/recommendations/:id" element={<MovieDetails />} />
       <Route path="/people/:id" element={<PeopleDetails />} />
       <Route path="/people/:id/media" element={<MediaPeople />} />
       <Route path="*" element={<NotFound404 />} />
