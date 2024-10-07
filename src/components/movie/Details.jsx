@@ -1,6 +1,6 @@
 import RatingStars from '../RatingStars'
-import DetailsItems from './DetailsItems'
-import DetailsMore from './DetailsMore'
+import DetailsItems from '../DetailsItems'
+import DetailsMore from '../DetailsMore'
 
 import Coin from '../../icons/Coin'
 import Clock from '../../icons/Clock'

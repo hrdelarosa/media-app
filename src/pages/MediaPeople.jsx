@@ -5,17 +5,25 @@ import Loader from '../components/Loader'
 import { usePeopleDetails } from '../hooks/usePeopleDetails'
 import { replaceSpace } from '../utils/replaceSpace'
 import '../styles/MediaPeople.css'
+import { useOpacity } from '../hooks/useOpacity'
 
 export default function MediaPeople() {
   const { id } = useParams()
   const { loading, people, medias } = usePeopleDetails({ id })
+  const { opacity } = useOpacity(loading)
 
   return (
     <Layout>
       {loading ? (
         <Loader />
       ) : (
-        <main className="content-media-people">
+        <main
+          style={{
+            opacity: opacity,
+            transition: 'opacity 1s ease-in-out',
+          }}
+          className="content-media-people"
+        >
           <div className="name-media-people">
             <div className="name-image">
               <div className="image-people">

@@ -1,5 +1,5 @@
 import ArrowUp from '../icons/ArrowUp'
-import DetailsItems from './movie/DetailsItems'
+import DetailsItems from './DetailsItems'
 import RatingStars from './RatingStars'
 
 import '../styles/TrailerInfo.css'
@@ -26,6 +26,10 @@ export default function TrailerInformation({ trailer, movie, keywords }) {
         <div className="itmes-more">
           <DetailsItems title="Tagline">
             <p>{movie.tagline}</p>
+          </DetailsItems>
+
+          <DetailsItems title="Type">
+            <p>{movie.type}</p>
           </DetailsItems>
 
           {movie.homepage ? (

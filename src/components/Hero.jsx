@@ -42,9 +42,18 @@ export default function Hero() {
 
           <div className="content-btn">
             <Link
-              to={`/movie/${media.id}-${
-                replaceSpace(media.name) || replaceSpace(media.title)
-              }`}
+              to={
+                media.media_type === 'movie'
+                  ? `/movie/${media.id}-${
+                      replaceSpace(media.name) || replaceSpace(media.title)
+                    }`
+                  : `/serie/${media.id}-${
+                      replaceSpace(media.name) || replaceSpace(media.title)
+                    }`
+              }
+              // to={`/movie/${media.id}-${
+              //   replaceSpace(media.name) || replaceSpace(media.title)
+              // }`}
               className="btn-more"
             >
               <svg

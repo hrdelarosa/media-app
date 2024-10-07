@@ -4,9 +4,15 @@ import { replaceSpace } from '../../utils/replaceSpace'
 export default function Media({ media }) {
   return (
     <Link
-      to={`/movie/${media.id}-${
-        replaceSpace(media.name) || replaceSpace(media.title)
-      }`}
+      to={
+        media.media_type === 'movie'
+          ? `/movie/${media.id}-${
+              replaceSpace(media.name) || replaceSpace(media.title)
+            }`
+          : `/serie/${media.id}-${
+              replaceSpace(media.name) || replaceSpace(media.title)
+            }`
+      }
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       className="content-media"
     >
